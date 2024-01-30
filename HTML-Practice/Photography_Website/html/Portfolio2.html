@@ -1,0 +1,67 @@
+<!--Porfolio Page-->
+<html>
+	<head>
+	<link rel="stylesheet" href="C:\Users\Josh Gigliotti\Desktop\html\styles2.css">
+	</head>
+	<body>
+		<header>
+			<div class="dropdown">
+				<button class="dropbtn">Menu</button>
+				<div class="dropdown-content">
+					<a href="index.html">HOME</a>
+					<a href="#">Portfolio</a>
+					<a href="#">B & W</a>
+				</div>
+			</div>
+		</header>
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<img src="Photos/River.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="Photos/Ship2.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="Photos/rock2.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="Photos/Shoes.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<img src="Photos/Subway.jpg" style="width: 100%">
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>				
+		</div>
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+  			showSlides(slideIndex += n);
+			}		
+
+			function currentSlide(n) {
+  			showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+  				var i;
+  				var slides = document.getElementsByClassName("mySlides");
+  				var dots = document.getElementsByClassName("dot");
+  				if (n > slides.length) {slideIndex = 1}    
+  				if (n < 1) {slideIndex = slides.length}
+  				for (i = 0; i < slides.length; i++) {
+      				slides[i].style.display = "none";  
+  				}
+  				for (i = 0; i < dots.length; i++) {
+      			dots[i].className = dots[i].className.replace(" active", "");
+  			}
+  			slides[slideIndex-1].style.display = "block";  
+  			dots[slideIndex-1].className += " active";
+			}
+		</script>
+
+	</body>
+</html>

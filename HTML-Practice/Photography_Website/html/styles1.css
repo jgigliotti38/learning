@@ -1,0 +1,67 @@
+/*styles1 CSS*/
+body {
+	background-image: url('Photos/Brookline.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+a:visited, a:hover, a:link, a:active {
+	color: inherit;
+	text-decoration: none;
+}
+.homebox {
+	width: 100%
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	padding-top: 80px;
+}
+.homebox span {
+	display: block;
+}
+.maintext {
+	font-size: 80px;
+	font-weight: bold;
+	font-family: font1;
+	animation: text 2s 1;
+	animation-timing-function: ease;
+	padding-bottom: 40px;
+
+}
+.subtext {
+	font-size: 30px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	/*width: 200px;*/
+	align-self: center;
+	font-family: Georgia;
+	opacity: 1;
+	display:block;
+	transition: 0.5s ease;
+	backface-visibility: hidden;
+	border: solid white;
+
+}
+.subtext:hover {
+	opacity: 0.3;
+}
+@keyframes text  {
+	0%{
+		opacity: .2;
+		margin-bottom: -40px;
+	}
+
+}
+
+@font-face {
+	font-family: font1;
+	src: url(Fonts/OLDENGL.ttf);}
+
+
