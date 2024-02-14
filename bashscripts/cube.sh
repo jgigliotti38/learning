@@ -23,7 +23,7 @@ fi
 echo "Calculating ..."
 sleep 3
 
-
+echo "===================="
 cardsperplayer=$(( $y_cardsperpack * $z_packsperplayer ))
 cardsremaining=$(($x_totalcards % $n_numplayers ))
 echo "Total Cards in Cube: $x_totalcards"
@@ -34,6 +34,8 @@ echo "Each Player will have a max of $z_packsperplayer packs"
 echo "Each Player will draft: $cardsperplayer cards for a total of $(( $cardsperplayer * $n_numplayers)) cards drafted"
 sleep 3
 
+echo "===================="
+
 a_remainingcardpool=$(( $x_totalcards - ($z_packsperplayer * $y_cardsperpack * $n_numplayers)))
 b_remainingpacks=$(( $a_remainingcardpool / $y_cardsperpack ))
 c_remainingcards=$(( $a_remainingcardpool % $y_cardsperpack ))
@@ -43,6 +45,7 @@ echo "Remaining Packs After Draft: $b_remainingpacks"
 echo "Remaining Cards Unpacked: $c_remainingcards"
 
 
+echo "===================="
 
 # === NOTES ===
 
@@ -60,4 +63,3 @@ echo "Remaining Cards Unpacked: $c_remainingcards"
 # a = x - (z * y * n)
 # b = a / y
 # c = a % y
-~                       
