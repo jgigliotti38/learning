@@ -19,3 +19,15 @@ Will be based on numerous inputs from User
 - c_remainingunpackedcards -> Total Remaining cards that Have not been drafted and are not in a Pack
 
 ## Equations
+
+> a = x - (z * y * n)
+
+> b = a / y
+
+> c = a % y
+
+> o = y * z
+
+> cards remaining = x % n
+
+> Total Cards Drafted = o * n
