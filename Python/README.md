@@ -1,3 +1,3 @@
-# cube.py
-Python Program to perfect a draft cube base on numerical inputs
-
+# Python Learning
+Repository that contains learning python code
+Used for learning purposes
