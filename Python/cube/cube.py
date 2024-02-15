@@ -50,7 +50,7 @@ else:
     time.sleep(3)
 
     print(f'Remaining Card Pool: {a_remainingcardpool}')
-    print(f'Total Packs in Cube: {b_remainingpacks}')
+    print(f'Remaining Unopened Packs in Cube: {b_remainingpacks}')
     print(f'Remaind Cards Unpacked: {c_remainingunpackedcards}')
 
 print("==============================")
