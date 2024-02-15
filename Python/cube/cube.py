@@ -31,13 +31,26 @@ p_totalcardsdrafted = o_totalcardsperplayer * n_numplayers
 
 a_remainingcardpool = x_totalcards - (z_numpacksperplayer * y_numcardsperpack * n_numplayers)
 
-b_remainingpacks = a_remainingcardpool / y_numcardsperpack
+b_remainingpacks = int(a_remainingcardpool / y_numcardsperpack)
 
 c_remainingunpackedcards = a_remainingcardpool % y_numcardsperpack
 
-print(f'Total Cards in Cube: {x_totalcards}'  )
-print(f'Total Players: {n_numplayers}' )
-print(f'Total Cards Per Pack: {y_numcardsperpack}' )
-print(f'Total Packs Per Player: {z_numpacksperplayer}' )
+if a_remainingcardpool < 0 or b_remainingpacks < 0:
+    print("Error Calculating, Negative Card Pool/Remaining Packs Found")
+    exit()
+else:
+    print(f'Total Cards in Cube: {x_totalcards}'  )
+    print(f'Total Players: {n_numplayers}' )
+    print(f'Total Cards Per Pack: {y_numcardsperpack}' )
+    print(f'Total Packs Per Player: {z_numpacksperplayer}' )
 
-print(f'Each Player will draft: {o_totalcardsperplayer} cards for a total of\n {p_totalcardsdrafted} cards drafted')
+    print(f'Each Player will draft: {o_totalcardsperplayer} cards for a total of {p_totalcardsdrafted} cards drafted')
+
+    print("==============================")
+    time.sleep(3)
+
+    print(f'Remaining Card Pool: {a_remainingcardpool}')
+    print(f'Total Packs in Cube: {b_remainingpacks}')
+    print(f'Remaind Cards Unpacked: {c_remainingunpackedcards}')
+
+print("==============================")
