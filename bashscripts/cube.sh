@@ -9,15 +9,15 @@ read n_numplayers
 #echo "Total Players: $players"
 
 if [ -z $1 ]; then
-        y_cardsperpack=15
+	y_cardsperpack=15
 else
-        y_cardsperpack=$1
+	y_cardsperpack=$1
 fi
 
 if [ -z $2 ]; then
-        z_packsperplayer=3
+	z_packsperplayer=3
 else
-        z_packsperplayer=$2
+	z_packsperplayer=$2
 fi
 
 echo "Calculating ..."
@@ -64,4 +64,3 @@ echo "===================="
 # a = x - (z * y * n)
 # b = a / y
 # c = a % y
-~                                 
