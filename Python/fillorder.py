@@ -2,11 +2,11 @@
 
 import pymysql
 # Open Database connection
-db = pymysql.connect( 
-        host='localhost', 
+db = pymysql.connect(
+        host='localhost',
         user='testuser',
-        password = 'password', 
-        db='first_database', 
+        password = 'password',
+        db='first_database',
         )
 
 # Create a cursor object
@@ -16,6 +16,15 @@ cursor = db.cursor()
 
 ## iterate through rows
 
+# Fetch all rows
+secret_word = "python"
+counter = 0
+while True:
+        pointerrow = cursor.fetchone()
+        print(pointerrow)
+        flag = input('Next Row? ')
+        if flag == secret_word or pointerrow == None:
+                break
 
 
 
@@ -31,17 +40,6 @@ cursor = db.cursor()
 
 cursor.execute("SELECT * from avengers")
 
-# Fetch all rows
-secret_word = "python"
-counter = 0
-while True:
-	pointerrow = cursor.fetchone()
-	print(pointerrow)
-	flag = input('Next Row? ')
-	if flag == secret_word or pointerrow == None:
-		break
-
 
 # Close database
 db.close()
-
