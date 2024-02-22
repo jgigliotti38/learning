@@ -9,7 +9,7 @@ db = pymysql.connect(
         db='first_database',
 	cursorclass=pymysql.cursors.DictCursor,
         )
-# fetch al rows
+# fetch all rows
 def fetch_allrows():
 	# Create a cursor object
 	cursor = db.cursor()
