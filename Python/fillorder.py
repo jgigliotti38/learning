@@ -9,33 +9,30 @@ db = pymysql.connect(
         db='first_database',
 	cursorclass=pymysql.cursors.DictCursor,
         )
+# fetch al rows
+def fetch_allrows():
+	# Create a cursor object
+	cursor = db.cursor()
+	# Fetch all rows and iterate through each of them
+	rowcount = cursor.execute("SELECT id,firstname,lastname,coffee_order from avengers")
 
-# Create a cursor object
-cursor = db.cursor()
-cursor2 = db.cursor()
+	secret_word = "python"
+	counter = 1
+	while True:
+		pointerrow = cursor.fetchone()
+		counter+=1
+		print(pointerrow)
+		flag = input('Next Row? ')
+		if flag == secret_word or counter > rowcount:
+			break
 
-# Fetch all rows and iterate through each of them
-rowcount = cursor.execute("SELECT id,firstname,lastname,coffee_order from avengers")
-
-secret_word = "python"
-counter = 1
-while True:
-	pointerrow = cursor.fetchone()
-	counter+=1
-	print(pointerrow)
-	flag = input('Next Row? ')
-	if flag == secret_word or counter > rowcount:
-		break
-
-print("Number of rows: %s\n" % rowcount)
-
-
-
+	print("Number of rows: %s\n" % rowcount)
 
 
 
 # edit a row value
 def edit_rowvalue():
+	cursor2 = db.cursor()
 	cursor2.execute("SELECT * from avengers")
 	row = cursor2.fetchone()
 	identifier = row.get("id")
@@ -49,10 +46,13 @@ def edit_rowvalue():
 	db.commit()
 	
 	# print change
-	cursor2.execute( "SELECT * FROM avengers" )
+	cursor2.execute( "SELECT id,firstname,lastname,coffee_order FROM avengers" )
 	ver = cursor2.fetchone()
 	print(ver)
 
+
+
+#fetch_allrows()
 
 edit_rowvalue()
 
