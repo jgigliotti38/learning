@@ -21,7 +21,7 @@ y_numcardsperpack = int(input("Awesome! How Many cards will be in each pack?\n")
 z_numpacksperplayer = int(input("Finally, How Many Packs per player?\n"))
 
 print("Thank you for your input!")
-print("Calculating...")
+print("Calculating...\n")
 time.sleep(3)
 
 # Perform Calculations
@@ -34,6 +34,8 @@ a_remainingcardpool = x_totalcards - (z_numpacksperplayer * y_numcardsperpack * 
 b_remainingpacks = int(a_remainingcardpool / y_numcardsperpack)
 
 c_remainingunpackedcards = a_remainingcardpool % y_numcardsperpack
+
+q_percentcardpoolused = (a_remainingcardpool / x_totalcards) * 100
 
 if a_remainingcardpool < 0 or b_remainingpacks < 0:
     print("Error Calculating, Negative Card Pool/Remaining Packs Found")
@@ -48,9 +50,12 @@ else:
 
     print("==============================")
     time.sleep(3)
-
-    print(f'Remaining Card Pool: {a_remainingcardpool}')
+    
+    print(f'Remaining Card Pool (COUNT): {a_remainingcardpool}')
+    print(f'Remaining Card Pool (%): {q_percentcardpoolused}%')
     print(f'Remaining Unopened Packs in Cube: {b_remainingpacks}')
     print(f'Remaind Cards Unpacked: {c_remainingunpackedcards}')
 
 print("==============================")
+
+print("\n============ END ============")
