@@ -1,9 +1,11 @@
+# cube.py
+
 import time
 from decimal import Decimal, getcontext
+import os
 
-# cube.py
+os.system('clear')
 
-# cube.py
 """
 The goal for this program is to create
 a suitable cube based on various inputs
